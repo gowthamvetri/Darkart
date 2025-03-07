@@ -16,9 +16,7 @@ export default function App() {
       dispatch(setUserDetails(response.data));
   }
     useEffect(()=>{
-      if(user._id){
         fetchUser();
-      }
   },[])
 
   return (

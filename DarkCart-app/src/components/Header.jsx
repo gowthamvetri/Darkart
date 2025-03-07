@@ -67,7 +67,7 @@ function Header() {
             <div className="flex gap-3">
               {/* Login  mobile icon*/}
               <button
-                className="text-neutral-600 lg:hidden"
+                className="text-neutral-600 lg:hidden cursor-pointer"
                 onClick={handleLoginNavigate}
               >
                 <FaUserCircle size={30} />
