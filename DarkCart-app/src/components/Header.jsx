@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logo from "../assets/logo.png";
+import logo from "../assets/logo.jpeg";
 import Search from "./Search";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
@@ -35,7 +35,7 @@ function Header() {
 
   return (
     <>
-      <header className="h-30 lg:h-24 lg:shadow-md sticky top-0 flex items-center justify-center flex-col lg:flex-row p-4 bg-white z-10">
+      <header className="h-30 lg:h-24 lg:shadow-md sticky top-0 flex items-center justify-center flex-col lg:flex-row p-4 bg-white ">
         {!(isSearch && ismobile) && (
           <div className="container mx-auto flex justify-between items-center h-full px-4">
             {/* Header */}
@@ -43,15 +43,13 @@ function Header() {
               <Link to={"/"} className="h-full flex items-center">
                 <img
                   src={logo}
-                  width={170}
-                  height={50}
+                  width={80}
                   alt=""
                   className="hidden lg:block"
                 />
                 <img
                   src={logo}
                   width={120}
-                  height={50}
                   alt=""
                   className="lg:hidden"
                 />

@@ -45,7 +45,7 @@ function Search() {
             />
           </div>
         ) : (
-          <div onClick={handleSearch} className="flex-1 h-full py-3">
+          <div onClick={handleSearch} className="flex-1 h-full lg:py-3 py-2">
             <TypeAnimation
               sequence={[
                 'Search "Milk"',

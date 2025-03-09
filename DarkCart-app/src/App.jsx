@@ -16,7 +16,9 @@ export default function App() {
       dispatch(setUserDetails(response.data));
   }
     useEffect(()=>{
+      if(localStorage.getItem("accessToken")){
         fetchUser();
+      }
   },[])
 
   return (

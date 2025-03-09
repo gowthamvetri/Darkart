@@ -7,7 +7,7 @@ import SummaryApi from '../common/SummaryApi'
 import { logout } from '../store/userSlice'
 import toast from 'react-hot-toast'
 import AxiosTostError from '../utils/AxiosTostError'
-import { FaLink } from "react-icons/fa";
+import { FiExternalLink } from "react-icons/fi";
 
 function UserMenue({close}) {
     const user = useSelector((state)=> state?.user)
@@ -32,6 +32,13 @@ function UserMenue({close}) {
         }
     }
 
+    
+  const handleClose = () =>{
+    if(close){
+        close()
+    }
+  }
+
   return (
     <div >
         <div className='text-md font-semibold'>
@@ -39,16 +46,16 @@ function UserMenue({close}) {
         </div>
         <div className='text-sm mt-1 flex gap-3'>
             <span className='max-w-52 text-ellipsis line-clamp-1'>{user ?. name || user ?. email}</span>
-            <Link to={"/dashboard/profile"} onClick={()=>{close()}}>
-                <FaLink size={15} className='font-extralight hover:text-yellow-400'/>
+            <Link to={"/dashboard/profile"} onClick={handleClose}>
+                <FiExternalLink size={15} className='font-extralight hover:text-yellow-400'/>
             </Link>
         </div>
 
         <Divider/>
 
         <div className='text-sm grid gap-4'>
-            <Link to="/dashboard/myorders" className='p-2 hover:bg-red-100'>My Order</Link>
-            <Link to="/dashboard/address" className='p-2 hover:bg-red-100'>Save Address</Link>
+            <Link onClick={handleClose} to="/dashboard/myorders" className='p-2 hover:bg-red-100'>My Order</Link>
+            <Link onClick={handleClose} to="/dashboard/address" className='p-2 hover:bg-red-100'>Save Address</Link>
 
             <button onClick={handleLogOut} className='text-red-500 text-left p-2 cursor-pointer hover:bg-red-100'>
                 Logout
